@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dashboard for {{orig}}</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'shortenersite/css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'shortenersite/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'shortenersite/css/styles.css' %}" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="results">
+		<div class="container">
+			<div class="row header">
+				<div class="col-md-12">
+					<h1>How are you doing on social networks?</h1>
+					<span>Dashboard for: <a href="{{url}}">{{url}}</a> | <a href="http://localhost:8000">Analyze another link</a></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 facebook">
+					<span>Facebook likes</span>
+					<h3><i class="fa fa-icon fa-facebook-official"></i> <span id="facebook" style="position:relative;left:35px;">{{fb}}</span></h3>
+				</div>
+				<div class="col-md-3 twitter">
+					<span>Twitter tweets</span>
+					<h3><i class="fa fa-icon fa-twitter"></i> <span id="twitter" style="position:relative;left:35px;">{{tw}}</span></h3>
+				</div>
+				<div class="col-md-3 google">
+					<span>Google +1</span>
+					<h3><i class="fa fa-icon fa-google-plus"></i> <span id="google" style="position:relative;left:35px;">0</span></h3>
+				</div>
+				<div class="col-md-3 linkedin">
+					<span>LinkedIn shares</span>
+					<h3><i class="fa fa-icon fa-linkedin-square"></i> <span id="linkedin" style="position:relative;left:35px;">0</span></h3>
+				</div>
+			</div>
+
+			<div class="row graph">
+				<div class="col-md-12">
+					<canvas id="canvas"></canvas>
+				</div>
+			</div>
+		</div>
+		
+		{%load staticfiles%}
+		<script src="{% static 'shortenersite/js/animate.js' %}"></script>
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	</body>
+</html>
