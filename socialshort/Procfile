@@ -1,0 +1,1 @@
+web: gunicorn socialshort.wsgi --log-file -
